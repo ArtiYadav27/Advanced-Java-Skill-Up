@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="orderService"-->
+<!--          name="orderServiceBean, orderServiceBean2"-->
+<!--          class="org.arti.OrderService"/>-->
+
+
+    <bean id="paymentService" class="org.arti.PaymentService">
+<!--        <constructor-arg index="1" value="4"/>-->
+<!--        <constructor-arg index="0" value="UPI"/>-->
+        <constructor-arg name="type" value="UPI"/>
+        <constructor-arg name="retryCount" value="4"/>
+
+    </bean>
+
+
+    <bean id="orderService" class="org.arti.OrderService">
+<!--        <constructor-arg ref="paymentService"/>-->
+        <property name="payment" ref="paymentService"/>
+    </bean>
+
+
+</beans>

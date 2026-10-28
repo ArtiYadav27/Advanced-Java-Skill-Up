@@ -1,0 +1,21 @@
+# Maven build output
+**/target/
+
+# IDE files
+.idea/
+**/.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Logs
+*.log
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+application-local.properties
+application-local.yml
